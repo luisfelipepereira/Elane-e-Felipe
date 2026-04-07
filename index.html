@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pagina romantica premium dedicada ao nosso amor.">
+  <title>Nosso Tempo | Elane e Felipe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="loading-screen" aria-live="polite">
+    <div class="loader-heart" aria-hidden="true"></div>
+    <p>Carregando nossa historia...</p>
+  </div>
+
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <header class="hero">
+    <nav class="top-nav">
+      <a href="#cronometro">Cronometro</a>
+      <a href="#carta">Carta</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#musica">Musica</a>
+    </nav>
+
+    <div class="hero-layer" data-parallax="0.12">
+      <div class="hero-content reveal">
+        <p class="eyebrow">Uma pagina feita para o nosso amor</p>
+        <h1 id="main-title">Elane <span>&</span> Felipe</h1>
+        <p class="hero-subtitle">
+          Um presente digital romantico, elegante e intenso, para celebrar cada segundo ao seu lado.
+        </p>
+        <div class="hero-actions">
+          <a class="btn ripple-btn" href="#cronometro">Ver nosso tempo</a>
+          <a class="btn btn-ghost ripple-btn" href="#carta">Ler nossa carta</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="cronometro" class="section reveal" data-start-date="2025-04-13T16:30:00">
+      <div class="section-heading">
+        <h2>Estamos juntos ha...</h2>
+        <p id="start-date-label"></p>
+      </div>
+
+      <div class="timer-grid">
+        <article class="timer-unit">
+          <span id="days">000</span>
+          <small>Dias</small>
+        </article>
+        <article class="timer-unit">
+          <span id="hours">00</span>
+          <small>Horas</small>
+        </article>
+        <article class="timer-unit">
+          <span id="minutes">00</span>
+          <small>Minutos</small>
+        </article>
+        <article class="timer-unit">
+          <span id="seconds">00</span>
+          <small>Segundos</small>
+        </article>
+      </div>
+    </section>
+
+    <section id="mensagens" class="section reveal">
+      <div class="section-heading">
+        <h2>Nossas mensagens</h2>
+      </div>
+      <div class="typewriter-box">
+        <p class="typewriter-line">
+          <span id="typewriter-text"></span><span class="cursor" aria-hidden="true">|</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="carta" class="section romantic-letter-section">
+      <div class="section-heading">
+        <h2>Carta Especial</h2>
+        <p>Um bilhete feito para eternizar tudo o que sentimos.</p>
+      </div>
+
+      <article class="romantic-letter-card">
+        <span class="letter-heart deco-a" aria-hidden="true">&#10084;</span>
+        <span class="letter-heart deco-b" aria-hidden="true">&#10084;</span>
+        <span class="letter-heart deco-c" aria-hidden="true">&#10084;</span>
+        <span class="letter-heart deco-d" aria-hidden="true">&#10084;</span>
+
+        <header class="letter-header">
+          <p class="letter-tag">Para voce, meu amor</p>
+        </header>
+
+        <div class="letter-body">
+          <p id="letter-typewriter" class="letter-typewriter" aria-live="polite">
+Oi, meu amor.
+<br><br>
+Hoje faz um ano que a gente est&aacute; junto... e, sinceramente, parece que foi ontem que tudo come&ccedil;ou. Um ano pode parecer pouco para algumas pessoas, mas pra mim, foi tempo suficiente pra perceber que voc&ecirc; mudou completamente a minha vida.
+<br><br>
+Eu quero te agradecer... por cada momento, por cada sorriso, por cada instante ao seu lado. Obrigado por todo esfor&ccedil;o que voc&ecirc; fez e ainda faz pra estar comigo, por nunca soltar a minha m&atilde;o, mesmo nos dias dif&iacute;ceis.
+<br><br>
+Desde o momento em que te conheci, algo dentro de mim teve certeza: eu n&atilde;o podia te perder. Foi ali que eu percebi que voc&ecirc; n&atilde;o era s&oacute; mais algu&eacute;m na minha vida... voc&ecirc; era a pessoa.
+<br><br>
+Hoje, o meu maior sonho &eacute; construir uma vida com voc&ecirc;. Uma fam&iacute;lia linda, cheia de amor... com nossos filhos, Luiz Henrique e Elena.
+<br><br>
+Quero me casar com voc&ecirc;, dividir a vida, crescer juntos e construir uma hist&oacute;ria incr&iacute;vel.
+<br><br>
+Obrigado por estar ao meu lado, por me apoiar, por acreditar em mim... e, acima de tudo, por me amar.
+<br><br>
+Eu te amo mais do que palavras conseguem explicar.
+          </p>
+          <template id="letter-content-template">
+Oi, meu amor.
+
+Hoje faz um ano que a gente est&aacute; junto... e, sinceramente, parece que foi ontem que tudo come&ccedil;ou. Um ano pode parecer pouco para algumas pessoas, mas pra mim, foi tempo suficiente pra perceber que voc&ecirc; mudou completamente a minha vida.
+
+Eu quero te agradecer... por cada momento, por cada sorriso, por cada instante ao seu lado. Obrigado por todo esfor&ccedil;o que voc&ecirc; fez e ainda faz pra estar comigo, por nunca soltar a minha m&atilde;o, mesmo nos dias dif&iacute;ceis.
+
+Desde o momento em que te conheci, algo dentro de mim teve certeza: eu n&atilde;o podia te perder. Foi ali que eu percebi que voc&ecirc; n&atilde;o era s&oacute; mais algu&eacute;m na minha vida... voc&ecirc; era a pessoa.
+
+Hoje, o meu maior sonho &eacute; construir uma vida com voc&ecirc;. Uma fam&iacute;lia linda, cheia de amor... com nossos filhos, Luiz Henrique e Elena.
+
+Quero me casar com voc&ecirc;, dividir a vida, crescer juntos e construir uma hist&oacute;ria incr&iacute;vel.
+
+Obrigado por estar ao meu lado, por me apoiar, por acreditar em mim... e, acima de tudo, por me amar.
+
+Eu te amo mais do que palavras conseguem explicar.
+          </template>
+        </div>
+
+        <div class="letter-actions">
+          <button id="love-surprise-btn" class="btn ripple-btn surprise-btn" type="button">
+            Clique para uma surpresa &#x1F496;
+          </button>
+        </div>
+
+        <div id="love-surprise-box" class="surprise-box" hidden>
+          <p id="love-surprise-message">Meu lugar favorito sempre vai ser ao seu lado.</p>
+        </div>
+
+        <div id="surprise-hearts-layer" class="surprise-hearts-layer" aria-hidden="true"></div>
+      </article>
+    </section>
+
+    <section id="galeria" class="section reveal">
+      <div class="section-heading">
+        <h2>Nossos momentos</h2>
+        <p>Memorias em estilo polaroid com carinho em cada detalhe.</p>
+      </div>
+
+      <div class="mobile-polaroid-controls" aria-label="Controle mobile da galeria">
+        <button id="polaroid-prev" class="glow-pill ripple-btn" type="button">Anterior</button>
+        <p id="polaroid-position" aria-live="polite"></p>
+        <button id="polaroid-next" class="glow-pill ripple-btn" type="button">Proxima</button>
+      </div>
+
+      <div class="polaroid-grid">
+        <figure class="polaroid">
+          <img src="img/foto1.jpg.jpeg" alt="Momento romantico 1">
+          <figcaption>Seu sorriso acende tudo em mim.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/foto2.jpg.jpeg" alt="Momento romantico 2">
+          <figcaption>Cada abraco seu vira casa.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/foto3.jpg.jpeg" alt="Momento romantico 3">
+          <figcaption>Nosso olhar sempre conversa primeiro.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/foto4.jpg.jpeg" alt="Momento romantico 4">
+          <figcaption>Com voce, ate o silencio emociona.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/foto5.jpeg" alt="Momento romantico 5">
+          <figcaption>Nosso amor deixa o mundo mais leve.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/foto6.jpeg" alt="Momento romantico 6">
+          <figcaption>Eu escolheria voce em toda vida.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img7.jpeg" alt="Momento romantico 7">
+          <figcaption>Cada detalhe nosso vira lembranca preciosa.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img8.jpeg" alt="Momento romantico 8">
+          <figcaption>Nosso amor e paz em forma de abraco.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img9.jpeg" alt="Momento romantico 9">
+          <figcaption>Com voce tudo ganha mais sentido.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img10.jpeg" alt="Momento romantico 10">
+          <figcaption>Voce e meu lugar favorito no mundo.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img11.jpeg" alt="Momento romantico 11">
+          <figcaption>Seu olhar e meu ponto de calma.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img12.jpeg" alt="Momento romantico 12">
+          <figcaption>A vida com voce tem mais cor.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img13.jpeg" alt="Momento romantico 13">
+          <figcaption>Nosso amor cresce em cada dia simples.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img14.jpeg" alt="Momento romantico 14">
+          <figcaption>Obrigado por caminhar comigo sempre.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img15.jpeg" alt="Momento romantico 15">
+          <figcaption>Nossa historia e o meu maior presente.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img16.jpeg" alt="Momento romantico 16">
+          <figcaption>Seu carinho mudou meu jeito de amar.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img17.jpeg" alt="Momento romantico 17">
+          <figcaption>Te amar e a escolha mais certa que fiz.</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="img/img18.jpeg" alt="Momento romantico 18">
+          <figcaption>Nosso sorriso junto ilumina tudo.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="musica" class="section reveal">
+      <div class="section-heading">
+        <h2>Nossa trilha sonora</h2>
+        <p>Pressione play e deixa a musica guiar esse momento.</p>
+      </div>
+
+      <article class="spotify-card">
+        <button id="highlight-play" class="glow-pill ripple-btn" type="button">
+          Destacar play
+        </button>
+        <iframe
+          id="spotify-embed"
+          title="Player Spotify romantico"
+          style="border-radius:16px"
+          src="https://open.spotify.com/embed/track/6lanRgr6wXibZr8KgzXxBl?utm_source=generator"
+          width="100%"
+          height="152"
+          frameborder="0"
+          allowfullscreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Feito com amor, cuidado e admiracao por voce.</p>
+  </footer>
+
+  <div id="floating-toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
